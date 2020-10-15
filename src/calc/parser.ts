@@ -1,5 +1,5 @@
 import { isNumber } from './helpers';
-import { mathOperators } from './mathOperators';
+import { mathScalarOperators, mathAssociativeOperators } from './mathOperators';
 
 export type ParsedLineType = (number | string)[];
 
@@ -11,9 +11,12 @@ export const parser = (line: string): ParsedLineType | null => {
 
         const isValidNumberPush = !isNumber(prevItem) && isNumber(item);
         const isValidOperatorPush =
-            isNumber(prevItem) &&
+            (isNumber(prevItem) ||
+                mathAssociativeOperators.hasOwnProperty(prevItem)) &&
+            item !== prevItem &&
             !isNumber(item) &&
-            mathOperators.hasOwnProperty(item);
+            (mathScalarOperators.hasOwnProperty(item) ||
+                mathAssociativeOperators.hasOwnProperty(item));
 
         if (isValidNumberPush) {
             result.push(Number(item));

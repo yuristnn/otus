@@ -21,8 +21,8 @@ describe('Parser invalid cases', () => {
         );
     });
 
-    it('1 ! 33 - 2', () => {
-        expect(() => parser('1 ! 33 - 2')).toThrow(
+    it('2 ! ! 33 - 2', () => {
+        expect(() => parser('2 ! ! 33 - 2')).toThrow(
             TypeError('Unexpected string')
         );
     });
