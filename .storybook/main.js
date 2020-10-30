@@ -7,10 +7,11 @@ module.exports = {
   ],
   "addons": [
     "@storybook/addon-links",
-    "@storybook/addon-essentials"
+    "@storybook/addon-essentials",
+    '@storybook/addon-knobs'
   ],
   webpack: (config) => {
     return { ...config, module: { ...config.module, rules: custom.module.rules } };
   },
-  babel: async (options) => ({ ...options })
+  babel: async (options) => ({ ...options }),
 }
