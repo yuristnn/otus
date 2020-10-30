@@ -9,7 +9,9 @@
     "build": "webpack",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix ./",
     "test": "jest",
-    "check": "yarn test && yarn lint"
+    "check": "yarn test && yarn lint",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "husky": {
     "hooks": {
@@ -26,6 +28,10 @@
     "@babel/preset-env": "^7.12.0",
     "@babel/preset-react": "^7.12.1",
     "@babel/preset-typescript": "^7.12.0",
+    "@storybook/addon-actions": "^6.0.27",
+    "@storybook/addon-essentials": "^6.0.27",
+    "@storybook/addon-links": "^6.0.27",
+    "@storybook/react": "^6.0.27",
     "@types/jest": "^26.0.14",
     "@types/react": "^16.9.55",
     "@typescript-eslint/eslint-plugin": "^4.4.1",
@@ -39,11 +45,12 @@
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
-    "html-webpack-plugin": "^4.5.0",
+    "html-webpack-plugin": "^3.2.0",
     "husky": "^4.3.0",
     "jest": "^26.5.3",
     "lint-staged": "^10.4.0",
     "prettier": "^2.1.2",
+    "react-is": "^17.0.1",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.3",
     "webpack": "^5.1.0",
