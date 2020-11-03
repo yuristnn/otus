@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rows component Should render Rows component 1`] = `ShallowWrapper {}`;
