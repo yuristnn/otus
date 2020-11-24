@@ -3,7 +3,6 @@
 // Нужно заменить FIXME на тип который вычисляется на освове OrderState
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type FIXME = Array<'initial' | 'inWork' | 'fullfilled'>;
 
 const orderStates = [
     'initial',
@@ -14,6 +13,8 @@ const orderStates = [
 ] as const;
 
 type OrderState = typeof orderStates[number];
+
+type FIXME = Array<Exclude<OrderState, 'producing' | 'buyingSupplies'>>;
 
 export const getUserOrderStates = (orderStates: OrderState[]): FIXME => {
     const filteredStates = [] as FIXME;
