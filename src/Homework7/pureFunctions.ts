@@ -2,7 +2,7 @@
 export type Team = { name: string; score: number };
 
 export const getTopName = (teams: Team[]): string => {
-    return teams.sort((a, b) => b.score - a.score)[0].name;
+    return [...teams].sort((a, b) => b.score - a.score)[0].name;
 };
 
 // Задание 2
