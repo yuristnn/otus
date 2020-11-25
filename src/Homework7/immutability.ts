@@ -14,16 +14,11 @@ export type ExpectedTeam = {
 export const originalTeamToExpectedTeam = (
     originalTeam: OriginalTeam
 ): ExpectedTeam => {
-    return <ExpectedTeam>Object.keys(originalTeam).reduce((acc, elem) => {
-        switch (elem) {
-            case 'name':
-                return { ...acc, name: 'New York Badgers' };
-            case 'size':
-                return { ...acc, roster: 25 };
-            default:
-                return { ...acc, league: originalTeam.league };
-        }
-    }, {});
+    return <ExpectedTeam>{
+        name: 'New York Badgers',
+        roster: 25,
+        league: originalTeam.league,
+    };
 };
 
 // Задание 2
@@ -46,10 +41,11 @@ export type Team = {
 };
 
 export const originalTeamToExpectedTeam2 = (originalTeam: Team): Team => {
-    return <Team>Object.keys(originalTeam).reduce((acc, elem) => {
-        if (elem === 'captain') {
-            return { ...acc, captain: { ...originalTeam.captain, age: 28 } };
-        }
-        return { ...acc, name: originalTeam.name };
-    }, {});
+    return <Team>{
+        ...originalTeam,
+        captain: {
+            ...originalTeam.captain,
+            age: 28,
+        },
+    };
 };
